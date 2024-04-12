@@ -1,33 +1,70 @@
-# Movies list - Add Form
+# Getting Started with Create React App
 
-You have the `App` with the `MoviesList` and `NewMovie` form containing ready
-to use `TextField` components. Learn how it works and implement an ability to
-add movies from [IMDB](https://www.imdb.com/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-If you want to test your page you can get first image from a [movie page](https://www.imdb.com/title/tt1312171) using `DevTools` -> `Network` -> `Img`
+## Available Scripts
 
-> Here is [the demo page](https://mate-academy.github.io/react_movies-list-add-form/)
+In the project directory, you can run:
 
-1. `NewMovie` should check if `title`, `imgUrl`, `imdbUrl`, `imdbId` are
-entered when an input looses focus (`onBlur`) and show an error and a red
-border if needed (learn how it it implemented in the `TextField`);
-1. The `description` is optional;
-1. Disable the submit button until all the required fields are filled (spaces should be trimmed);
-1. Clear the form after adding a new movie.
-1. Errors should not be shown after clearing the form (change its key to
-reinitialize the form);
+### `npm start`
 
-## (Optional) Advanced validation
-Implement the ability to add custom validation callback to the `TextField`.
-Check if `imgUrl` and `imdbUrl` are valid URLs (you can use the next regex)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```js
-const pattern = /^((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%/.\w-_]*)?\??(?:[-+=&;%@,.\w_]*)#?(?:[,.!/\\\w]*))?)$/;
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Instructions
+### `npm test`
 
-- Implement a solution following the [React task guideline](https://github.com/mate-academy/react_task-guideline#react-tasks-guideline).
-- Use the [React TypeScript cheat sheet](https://mate-academy.github.io/fe-program/js/extra/react-typescript).
-- Open one more terminal and run tests with `npm test` to ensure your solution is correct.
-- Replace `<your_account>` with your Github username in the [DEMO LINK](https://Vovchukkul.github.io/react_movies-list-add-form/) and add it to the PR description.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
