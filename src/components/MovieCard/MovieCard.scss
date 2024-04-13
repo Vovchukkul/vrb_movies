@@ -1,3 +1,35 @@
+.card {
+  height: 460px;
+
+  position: relative;
+}
+
 .card-image img {
   object-fit: contain;
+}
+
+.content {
+  position: absolute;
+  bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.button_wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #fff;
+  border: none;
+  margin-top: 20px;
+
+  &:hover {
+    transform: scale(1.5);
+  }
 }

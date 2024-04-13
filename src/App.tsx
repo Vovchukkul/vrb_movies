@@ -1,21 +1,24 @@
 import './App.scss';
-import { useState } from 'react';
+import React from 'react';
 import { MoviesList } from './components/MoviesList';
 import { NewMovie } from './components/NewMovie';
-import moviesFromServer from './api/movies.json';
 import { Movie } from './types/Movie';
+import { Link } from 'react-router-dom';
 
-export const App = () => {
-  const [movies, setMovies] = useState<Movie[]>(moviesFromServer);
-  const [query, setQuery] = useState('');
+type Props = {
+  movies: Movie[];
+  query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+  setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
+};
 
+export const App: React.FC<Props> = ({ movies, query, setQuery, setMovies }) => {
   const handleAddMovie = (newMovie: Movie) => {
     setMovies(currentMovies => [...currentMovies, newMovie]);
   };
 
-
-  const confirmInputChanges = (event: { target: { value: string; }; }) => {
-    setQuery(event.target.value.trim());
+  const confirmInputChanges = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
   };
 
   return (
@@ -23,7 +26,6 @@ export const App = () => {
       <div className="page-content">
         <div className="box">
           <div className="field">
-            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor="search-query" className="label">
               Search movie
             </label>
@@ -40,10 +42,15 @@ export const App = () => {
             </div>
           </div>
         </div>
-        <MoviesList query={query} movies={movies} />
+        <Link to='/favourites'>
+          <button className='fav_button'>Go to favourities</button>
+        </Link>
+        {movies && movies.length > 0 && (
+          <MoviesList setMovies={setMovies} query={query} movies={movies} />
+        )}
       </div>
       <div className="sidebar">
-        <NewMovie onAdd={handleAddMovie} />
+        {movies && movies.length > 0 && <NewMovie movies={movies} onAdd={handleAddMovie} />}
       </div>
     </div>
   );

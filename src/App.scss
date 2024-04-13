@@ -1,8 +1,17 @@
-.page {
+
+@media (min-width: 320px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .page {
   display: grid;
   grid-template: auto / 1fr 400px;
   column-gap: 20px;
   min-height: 100vh;
+  }
 }
 
 .page-content {
@@ -12,4 +21,14 @@
 .sidebar {
   padding: 20px;
   border-left: 1px solid lightgray;
+}
+
+.fav_button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }

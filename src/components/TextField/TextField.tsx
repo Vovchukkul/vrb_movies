@@ -8,6 +8,7 @@ type Props = {
   placeholder?: string,
   required?: boolean,
   onChange?: (newValue: string) => void,
+  type?: string, // Add the type prop here
 };
 
 function getRandomDigits() {
@@ -23,8 +24,9 @@ export const TextField: React.FC<Props> = ({
   placeholder = `Enter ${label}`,
   required = false,
   onChange = () => {},
+  type = "text", // Default type is "text"
 }) => {
-  // generage a unique id once on component load
+  // generate a unique id once on component load
   const [id] = useState(() => `${name}-${getRandomDigits()}`);
 
   // To show errors only if the field was touched (onBlur)
@@ -39,7 +41,7 @@ export const TextField: React.FC<Props> = ({
 
       <div className="control">
         <input
-          type="text"
+          type={type} // Use the type prop here
           id={id}
           data-cy={`movie-${name}`}
           className={classNames('input', {

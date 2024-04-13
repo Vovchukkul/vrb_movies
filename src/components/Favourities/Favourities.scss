@@ -1,0 +1,43 @@
+.favourites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 30px;
+  column-gap: 20px;
+  width: 100%;
+}
+
+.fav_img {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.fav_card {
+  padding-inline: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 450px;
+  border-radius: 20px;
+  background-color: silver;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-content: space-around;
+
+  position: relative;
+}
+
+.delete-button_fav {
+  width: 20px;
+  background-color: silver;
+  border: none;
+  margin: 0 auto;
+
+  position: absolute;
+  bottom: 20px;
+}
