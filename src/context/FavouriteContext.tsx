@@ -23,6 +23,7 @@ export const FavouriteProvider: React.FC<Props> = ({ children }) => {
 
   const value: ContextType = useMemo(() => ({
     favouriteProducts,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setFavouriteProducts: (value: Movie[] | ((prevState: Movie[]) => Movie[])) => {
       if (typeof value === 'function') {
         const newValue = (value as (prevState: Movie[]) => Movie[])(favouriteProducts);
