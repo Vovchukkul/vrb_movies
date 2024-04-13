@@ -25,11 +25,9 @@ export const FavouriteProvider: React.FC<Props> = ({ children }) => {
     favouriteProducts,
     setFavouriteProducts: (value: Movie[] | ((prevState: Movie[]) => Movie[])) => {
       if (typeof value === 'function') {
-        // If the value is a function, apply it to the previous state to get the new state
         const newValue = (value as (prevState: Movie[]) => Movie[])(favouriteProducts);
         setFavouriteProducts(newValue);
       } else {
-        // If the value is not a function, directly set it as the new state
         setFavouriteProducts(value);
       }
     }
@@ -41,4 +39,3 @@ export const FavouriteProvider: React.FC<Props> = ({ children }) => {
     </FavouriteContext.Provider>
   );
 };
-

@@ -19,16 +19,10 @@ export const MoviesList: React.FC<Props> = ({ movies, query, setMovies }) => {
     return movie.title.toLowerCase().includes(lowerCaseQuery);
   });
 
-  // const handleDeleteMovie = (e: React.MouseEvent<HTMLButtonElement>, movieId: number) => {
-  //   e.preventDefault();
-  //   const newMovies = movies.filter(m => m.id !== movieId);
-  //   setMovies(newMovies);
-  // };
-
   const handleDeleteMovie = async (e: React.MouseEvent<HTMLButtonElement>, movieId: number) => {
     e.preventDefault();
     try {
-      await deleteMovie(movieId); // Send DELETE request to server
+      await deleteMovie(movieId);
       const newMovies = movies.filter(m => m.id !== movieId);
       setMovies(newMovies);
     } catch (error) {
